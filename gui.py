@@ -9,7 +9,7 @@ class MazeWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Maze Generator")
-        # Vertical layout
+        # Vertical layout to hold everything inside
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
         # Use a QLabel for the maze image
@@ -71,13 +71,13 @@ class MazeWindow(QWidget):
         # Get the method from the radio buttons.
         method = self._get_generation_method()
         maze.generate(method=method)
-        data = maze.display(debug=True)
-        # We create an Monotone image and set the pixels from the data.
+        data = maze.display()
+        # We create a Monotone image and set the pixels from the data.
         image = QImage(len(data), len(data), QImage.Format_Mono)
         for i in range(len(data)):
             for j in range(len(data)):
                 # QImage pixels are given by (column, row) so we need to swap i and j.
-                # In a QImage, 0 = black and 1 = white so we invert each pixel.
+                # In a mono QImage, 0 = black and 1 = white, so we invert each pixel.
                 image.setPixel(QPoint(j, i), not data[i][j])
         # Convert the image to a QPixmap and display it in the QLabel.
         pixmap = QPixmap.fromImage(image)
