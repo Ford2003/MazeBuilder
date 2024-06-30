@@ -25,9 +25,13 @@ Run app.py:
 
 The maze generator is created 100% out of python, and utilises a depth first search approach to create the maze.
 
-Given a maze size, n, we create a 2D array of cells with all the walls around them. We pick a start and end cell and remove the appropriate walls, so the user can enter and exit the maze.
+Given a maze size, we create a 2D array of cells with all the walls around them. We pick a start and end cell and remove the appropriate walls, so the user can enter and exit the maze.
 
 Now we use a stack to traverse the maze. For each cell we visit, we mark it as visited and add any unvisited neighbours of that cell onto the stack in a random order and remove the wall between the current cell and the next cell. If however a cell has no unvisited neighbours then we have reached a dead-end and must backtrack, in order to keep the maze connected, we remove the wall between the next cell and the cell that visited it. This creates a connected, random maze.
+
+---
+
+The GUI is created using PySide6. The maze is displayed by creating a QImage and setting each pixel colour from the output of the `Maze.display()` method, then converting it to a QPixmap and using that in a QLabel to show the image. The GUI also features a button to generate the mazes, a slider to determine maze size and radio buttons for the generation version.
 
 ---
 
