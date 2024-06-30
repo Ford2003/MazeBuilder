@@ -1,4 +1,4 @@
-# MazeBuilder
+# MazeBuilder - By Tommy Ford.
 
 A desktop app with a graphical interface for generating square mazes.
 
