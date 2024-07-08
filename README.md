@@ -1,13 +1,15 @@
-# MazeBuilder - By Tommy Ford.
+# MazeBuilder
 
 A desktop app with a graphical interface for generating square mazes.
 
 ## Usage
-EITHER:
+<ins>EITHER:</ins>
 
-Download app.exe and run it. This should work on Windows and Mac, but it is only tested on Windows.
+Download app.exe and run it. This should work on Windows and Mac, but it is only tested on Windows. 
 
-OR
+Click [here](https://github.com/Ford2003/MazeBuilder/releases/latest) for the latest release.
+
+<ins>OR</ins>
 
 Clone the repository:
 
